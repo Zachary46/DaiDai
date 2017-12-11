@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../XinLeChang.iml" filepath="$PROJECT_DIR$/../XinLeChang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.base/lib.base.iml" filepath="$PROJECT_DIR$/../lib.base/lib.base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.dialog/lib.dialog.iml" filepath="$PROJECT_DIR$/../lib.dialog/lib.dialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.dialog.anim/lib.dialog.anim.iml" filepath="$PROJECT_DIR$/../lib.dialog.anim/lib.dialog.anim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.dialog.ios/lib.dialog.ios.iml" filepath="$PROJECT_DIR$/../lib.dialog.ios/lib.dialog.ios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.marquee/lib.marquee.iml" filepath="$PROJECT_DIR$/../lib.marquee/lib.marquee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.okgo/lib.okgo.iml" filepath="$PROJECT_DIR$/../lib.okgo/lib.okgo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.pay/lib.pay.iml" filepath="$PROJECT_DIR$/../lib.pay/lib.pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib.share.iml" filepath="$PROJECT_DIR$/lib.share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.slide/lib.slide.iml" filepath="$PROJECT_DIR$/../lib.slide/lib.slide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.swipeback/lib.swipeback.iml" filepath="$PROJECT_DIR$/../lib.swipeback/lib.swipeback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.xrefresh/lib.xrefresh.iml" filepath="$PROJECT_DIR$/../lib.xrefresh/lib.xrefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib.xrv/lib.xrv.iml" filepath="$PROJECT_DIR$/../lib.xrv/lib.xrv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../web.lib/web.lib.iml" filepath="$PROJECT_DIR$/../web.lib/web.lib.iml" />
+    </modules>
+  </component>
+</project>

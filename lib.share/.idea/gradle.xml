@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/.." />
+            <option value="$PROJECT_DIR$/../app" />
+            <option value="$PROJECT_DIR$/../lib.base" />
+            <option value="$PROJECT_DIR$/../lib.dialog" />
+            <option value="$PROJECT_DIR$/../lib.dialog.anim" />
+            <option value="$PROJECT_DIR$/../lib.dialog.ios" />
+            <option value="$PROJECT_DIR$/../lib.marquee" />
+            <option value="$PROJECT_DIR$/../lib.okgo" />
+            <option value="$PROJECT_DIR$/../lib.pay" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../lib.slide" />
+            <option value="$PROJECT_DIR$/../lib.swipeback" />
+            <option value="$PROJECT_DIR$/../lib.xrefresh" />
+            <option value="$PROJECT_DIR$/../lib.xrv" />
+            <option value="$PROJECT_DIR$/../web.lib" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        applicationId "com.zachary.daidai"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+        }
+        manifestPlaceholders = [
+                GETUI_APP_ID : "Z5zUuEut5V8P6Xukcy9KQ6",
+                GETUI_APP_KEY : "97dmFVcwiP9trj8849GfrA",
+                GETUI_APP_SECRET : "WhUzNE9zsU5UiMYpYj6Rz4"
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('../dd.jks')//签名文件路径
+            storePassword "123456"
+            keyAlias "dd"
+            keyPassword "123456"  //签名密码
+            println("====== signingConfigs.debug ======")
+        }
+        release {
+            storeFile file('../dd.jks')//签名文件路径
+            storePassword "123456"
+            keyAlias "dd"
+            keyPassword "123456"  //签名密码
+            println("====== signingConfigs.release ======")
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.getui:sdk:2.11.1.0'
+    compile 'com.anthonycr.grant:permissions:1.0'
+    compile project(':boommenu')
+    compile project(':lib.share')
+}

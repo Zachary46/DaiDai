@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DaiDai.iml" filepath="$PROJECT_DIR$/DaiDai.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boommenu/boommenu.iml" filepath="$PROJECT_DIR$/boommenu/boommenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib.share/lib.share.iml" filepath="$PROJECT_DIR$/lib.share/lib.share.iml" />
+    </modules>
+  </component>
+</project>

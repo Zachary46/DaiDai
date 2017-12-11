@@ -1,0 +1,62 @@
+1.libAndroid manifest.xml改
+<data android:scheme="tencent100424468" />  tencent+AppId
+
+2.把lib的wxapi文件夹复制到主项目下，Android manifest.xml声明一下
+
+3.lib改友盟key
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="599bdcbd677baa495f0018fd" ><!--必须修改-->
+        </meta-data>
+
+4.在application配置key
+    private void initUMShare() {
+        UMShareAPI.get(this);
+        PlatformConfig.setWeixin("wx38f8ecd6a1596924", "0a779916cfc04b030d7d81f3fb431c9e");
+        PlatformConfig.setQQZone("1106360664", "eQTKcBgIobzBwFVu");
+    }
+
+5.分享所属activity设置
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
+
+
+使用代码：
+
+ private void openShareView() {
+        UMWeb web = new UMWeb("http://mp.weixin.qq.com/s/oc3S7nyuJ0VKdTuySJCpyg");
+        web.setTitle("跨惠通分享");//标题
+        web.setThumb(new UMImage(getActivity(),R.mipmap.ic_logo));//缩略图
+        web.setDescription("快来赚钱吧");//描述
+        //  UMImage image = new UMImage(ShareActivity.this, R.mipmap.ic_erweima);//资源文件
+        new ShareAction(getActivity()).withMedia(web)
+                .setDisplayList(SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.QQ,SHARE_MEDIA.QZONE)
+                .setCallback(umShareListener).open();
+    }
+
+    private UMShareListener umShareListener = new UMShareListener() {
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+            //分享开始的回调
+        }
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(), platform + " 分享成功啦", Toast.LENGTH_SHORT).show();
+
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(getActivity(),platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
+            if(t!=null){
+            }
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(),platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+        }
+    };
