@@ -3,6 +3,7 @@ package com.zachary.daidai;
 import android.app.Application;
 
 import com.igexin.sdk.PushManager;
+import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
@@ -18,6 +19,7 @@ public class App extends Application {
         PushManager.getInstance().registerPushIntentService(this.getApplicationContext(), DemoIntentService.class);
 
         UMShareAPI.get(this);
+        Config.DEBUG = true;
         PlatformConfig.setWeixin("wx38f8ecd6a1596924", "0a779916cfc04b030d7d81f3fb431c9e");
         PlatformConfig.setQQZone("1106601402", "kgGEfVmcHAVGha1n");
 

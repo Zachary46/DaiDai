@@ -37,7 +37,7 @@ public class ActionBarActivity extends AppCompatActivity {
     private WebView webView;
     private int[] texts = new int[]{
             R.string.qq, R.string.wx, R.string.dh,
-            R.string.wx, R.string.dh, R.string.wx,
+            R.string.fx, R.string.dh, R.string.wx,
             R.string.dh, R.string.wx, R.string.dh};
     private int[] text2s = new int[]{
             R.string.r1, R.string.r2, R.string.r3};
@@ -68,27 +68,32 @@ public class ActionBarActivity extends AppCompatActivity {
         BoomMenuButton rightBmb = (BoomMenuButton) actionBar.findViewById(R.id.action_bar_right_bmb);
 
         leftBmb.setButtonEnum(ButtonEnum.TextOutsideCircle);
-        leftBmb.setPiecePlaceEnum(PiecePlaceEnum.DOT_3_1);
-        leftBmb.setButtonPlaceEnum(ButtonPlaceEnum.SC_3_1);
-        for (int i = 0; i < leftBmb.getPiecePlaceEnum().pieceNumber(); i++)
+        leftBmb.setShowDelay(300);
+        leftBmb.setPiecePlaceEnum(PiecePlaceEnum.DOT_6_1);
+        leftBmb.setButtonPlaceEnum(ButtonPlaceEnum.SC_6_1);
+        for (int i = 0; i < leftBmb.getPiecePlaceEnum().pieceNumber(); i++){
             leftBmb.addBuilder(BuilderManager.getTextOutsideCircleButtonBuilderWithDifferentPieceColor(texts[i]));
+        }
+
 
         rightBmb.setButtonEnum(ButtonEnum.Ham);
+        rightBmb.setShowDelay(300);
+        rightBmb.setHideDelay(300);
         rightBmb.setPiecePlaceEnum(PiecePlaceEnum.HAM_3);
         rightBmb.setButtonPlaceEnum(ButtonPlaceEnum.HAM_3);
-        for (int i = 0; i < rightBmb.getPiecePlaceEnum().pieceNumber(); i++)
-            rightBmb.addBuilder(BuilderManager.getHamButtonBuilderWithDifferentPieceColor(text2s[i],texts2[i]));
+        for (int i = 0; i < rightBmb.getPiecePlaceEnum().pieceNumber(); i++) {
+            rightBmb.addBuilder(BuilderManager.getHamButtonBuilderWithDifferentPieceColor(text2s[i], texts2[i]));
 
-
+        }
         leftBmb.setOnBoomListener(new OnBoomListener() {
             @Override
             public void onClicked(int index, BoomButton boomButton) {
                 switch (index) {
-                    case 0:
+                    case 0://qq
                         String url0 = "mqqwpa://im/chat?chat_type=wpa&uin=337047207";
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url0)));
                         break;
-                    case 1:
+                    case 1://weixin
                         Intent intent1 = new Intent();
                         ComponentName cmp = new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI");
                         intent1.setAction(Intent.ACTION_MAIN);
@@ -97,7 +102,7 @@ public class ActionBarActivity extends AppCompatActivity {
                         intent1.setComponent(cmp);
                         startActivity(intent1);
                         break;
-                    case 2:
+                    case 2://dianhua
                         if (ContextCompat.checkSelfPermission(ActionBarActivity.this,
                                 Manifest.permission.CALL_PHONE)
                                 != PackageManager.PERMISSION_GRANTED) {
@@ -108,7 +113,16 @@ public class ActionBarActivity extends AppCompatActivity {
                             callPhone();
                         }
                         break;
-                    case 3:
+                    case 3://分享
+                        if (ContextCompat.checkSelfPermission(ActionBarActivity.this,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED) {
+
+                            ActivityCompat.requestPermissions(ActionBarActivity.this,
+                                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 112);
+                        } else {
+                            openShareView();
+                        }
 
                         break;
                     case 4:
@@ -252,6 +266,13 @@ public class ActionBarActivity extends AppCompatActivity {
                 callPhone();
             } else {
                 Toast.makeText(ActionBarActivity.this, "去设置里面打开拨打电话的权限", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }else if (requestCode == 112){
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openShareView();
+            } else {
+                Toast.makeText(ActionBarActivity.this, "允许存储权限", Toast.LENGTH_SHORT).show();
             }
             return;
         }

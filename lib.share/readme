@@ -12,6 +12,7 @@
 4.在application配置key
     private void initUMShare() {
         UMShareAPI.get(this);
+        Config.DEBUG = true;//调试，如果分享失败，可能是存储权限没申请
         PlatformConfig.setWeixin("wx38f8ecd6a1596924", "0a779916cfc04b030d7d81f3fb431c9e");
         PlatformConfig.setQQZone("1106360664", "eQTKcBgIobzBwFVu");
     }

@@ -47,15 +47,12 @@
             android:exported="true"
             android:label="PushService"
             android:process=":pushservice"></service>
-
-        <!-- 把这个拷到主项目 -->
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!-- 把这个拷到主项目 -->
         <activity android:name=".TimeActivity"></activity>
     </application>
 
